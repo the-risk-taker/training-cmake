@@ -1,0 +1,10 @@
+set(Boost_USE_STATIC_LIBS        ON)
+set(Boost_USE_DEBUG_LIBS        OFF)
+set(Boost_USE_RELEASE_LIBS       ON)
+set(Boost_USE_MULTITHREADED      ON)
+set(Boost_USE_STATIC_RUNTIME    OFF)
+find_package(Boost REQUIRED COMPONENTS program_options)
+
+add_executable(use_boost)
+target_sources(use_boost PRIVATE main.cpp)
+target_link_libraries(use_boost PRIVATE Boost::boost Boost::program_options)
